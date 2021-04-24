@@ -2,15 +2,11 @@ TgCrypto
 pyrogram
 cryptg
 telethon
-pyromod
-pymongo
 GitPython
 heroku3
 asyncio
 aiohttp==3.6.2
 google_trans_new
-pymongo
-motor
 dnspython
 requests
 pillow
