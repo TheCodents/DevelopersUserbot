@@ -1,0 +1,70 @@
+{
+  "name": "Devloper Userbot",
+  "description": "Userbot for Devlopers",
+  "keywords": [
+    "telegram",
+    "developer",
+    "plugin",
+    "telegram-bot",
+    "productivity",
+    "jayantkageri",
+    "userbot",
+    "programming",
+    "coding",
+    "pyrogram",
+    "telethon"
+  ],
+  "repository": "https://github.com/TheCodents/DevloperUserbot",
+  "website": "jayantkageri.ml",
+  "success_url": "jayantkageri.ml",
+  "stack": "heroku-20",
+  "env": {
+    "ENV": {
+      "description": "Setting this to ANYTHING will enable heroku.",
+      "value": "ANYTHING"
+    },
+    "API_ID": {
+      "description": "Get this value from my.telegram.org! Please do not steal",
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "Get this value from my.telegram.org! Please do not steal",
+      "value": ""
+    },
+    "PYROGRAM_SESSION": {
+      "description": "Pyrogram String Session, Get it by Running python3 -m session",
+      "value": "",
+      "required": false
+    },
+    "TELETHON_SESSION": {
+      "description": "Pyrogram String Session, Get it by Running python3 -m session",
+      "value": "",
+      "required": false
+    },
+    "LOG_CHAT": {
+      "description": "Log Chat ID",
+      "value": ""
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Heroku App Name that you putted on top",
+      "value": ""
+    },
+    "HEROKU_API": {
+      "description": "Your Heroku API Key, Can be found in https://dashboard.heroku.com/account",
+      "value": ""
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+ ],
+"addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "12"
+      }
+    }
+  ]
+}
