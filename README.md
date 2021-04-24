@@ -5,7 +5,7 @@
 ## Deploy
 
 ### Deploy to Heroku
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://github.com/TheCodents/DevlopersUserbot)
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/TheCodents/DevelopersUserbot)
 
 ### Local Deploy
 - Fill the config.py with your Own Values
