@@ -15,6 +15,10 @@
 - In Second Terminal do `python3 -m _telethon`
 - Done :)
 
+## SUPPORT GROUP
+- Facing Problems deploying it? No Problem, Visit us in [@TheCodentsSupport](https://telegram.me/TheCodentsSupport)
+
+
 ## Configuration
 - `API_ID` and `API_HASH` - Get API_ID and API_HASH from https://my.telegram.org
 - `TELETHON_SESSION` and `PYROGRAM_SESSION` - Get this by Running [this Repl](https://repl.it/@jayantkageri/StringSession#main.py)
@@ -30,8 +34,6 @@
 - Thanks to [Aditya S](https://github.com/xditya)
 - Thanks to [ME](https://github.com/jayantkageri)
 
-#SUPPORT GROUP
-- Facing Problems deploying it? No Problem, Visit us in [@TheCodentsSupport](https://telegram.me/TheCodentsSupport)
 ## License
 ```
     Devlopers Userbot, A Telegram Lightweight Userbot for Devlopers
