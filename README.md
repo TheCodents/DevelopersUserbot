@@ -20,7 +20,7 @@
 - `TELETHON_SESSION` and `PYROGRAM_SESSION` - Get this by Running [this Repl](https://repl.it/@jayantkageri/StringSession#main.py)
 - `HEROKU_APP_NAME` [For Heroku Only] - The App Name that you putted in first in Heroku
 - `HEROKU_API` [For Heroku Only] - Get this from [here](https://dashboard.heroku.com/account)
-- `LOG_CHAT` - Create an Group and add [@MissRoseBot](https://telegram.me/MissRose_bot) and send `/id`
+- `LOG_CHAT` - Create an Group and add [@MissEmiliaBot](https://telegram.me/MissEmilia_bot) and send `/id`
 
 # LEGAL
 ## Credits
