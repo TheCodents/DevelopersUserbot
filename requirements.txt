@@ -1,5 +1,6 @@
 TgCrypto
 pyrogram
+pyromod
 cryptg
 telethon
 GitPython
