@@ -15,7 +15,7 @@
 - In Second Terminal do `python3 -m _telethon`
 - Done :)
 
-## SUPPORT GROUP
+## Support Group
 - Facing Problems deploying it? No Problem, Visit us in [@TheCodentsSupport](https://telegram.me/TheCodentsSupport)
 
 
