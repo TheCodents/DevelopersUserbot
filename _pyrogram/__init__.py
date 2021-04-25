@@ -11,10 +11,12 @@ from config import API_HASH, API_ID, PY_SESSION
 import logging
 
 logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    level=logging.DEBUG,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 
-LOGGER = logging.getLogger(__name__)
+LOGGER = logging.getLogger("pyrogram").setLevel(logging.WARNING)
+
 
 HELP = {}
 CMD_HELP = {}
