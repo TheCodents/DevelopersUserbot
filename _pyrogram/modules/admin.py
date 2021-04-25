@@ -239,7 +239,6 @@ async def pin_message(_, message: Message):
     await asyncio.sleep(3)
     await message.delete()
 
-
 @app.on_message(filters.command("promote", PREFIX) & filters.me)
 async def promote(client, message: Message):
     if await CheckAdmin(message) is False:
@@ -260,7 +259,7 @@ async def promote(client, message: Message):
             title = " ".join(args[1:])
     get_user = await app.get_users(user)
     try:
-        await app.promote_chat_member(message.chat.id, user, can_pin_messages=True)
+        await app.promote_chat_member(message.chat.id, user, can_manage_chat=True, can_change_info=True, can_delete_messages=True, can_restrict_members=True, can_invite_users=True, can_pin_messages=True, can_manage_voice_chats=True)
         await message.edit(
             f"Successfully Promoted {get_user.first_name} with title {title}"
         )
