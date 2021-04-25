@@ -15,16 +15,15 @@
 - In Second Terminal do `python3 -m _telethon`
 - Done :)
 
-## Support Group
-- Facing Problems deploying it? No Problem, Visit us in [@TheCodentsSupport](https://telegram.me/TheCodentsSupport)
-
-
 ## Configuration
 - `API_ID` and `API_HASH` - Get API_ID and API_HASH from https://my.telegram.org
 - `TELETHON_SESSION` and `PYROGRAM_SESSION` - Get this by Running [this Repl](https://repl.it/@jayantkageri/StringSession#main.py)
 - `HEROKU_APP_NAME` [For Heroku Only] - The App Name that you putted in first in Heroku
 - `HEROKU_API` [For Heroku Only] - Get this from [here](https://dashboard.heroku.com/account)
 - `LOG_CHAT` - Create an Group and add [@MissEmiliaBot](https://telegram.me/MissEmilia_bot) and send `/id`
+
+## Support Group
+- Facing Problems in this? No Problem, Visit us in [@TheCodentsSupport](https://telegram.me/TheCodentsSupport)
 
 # LEGAL
 ## Credits
