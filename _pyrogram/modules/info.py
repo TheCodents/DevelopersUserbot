@@ -94,5 +94,5 @@ async def id(client, message):
         chat_78 = f"**Chat ID**: `{message.chat.id}`"
     text = f"""{chat_78} \n**[Message ID]({message.link})**: `{message.message_id}`\n**[User ID](tg://user?id={user.id})**: `{user.id}`\n"""
     if len(cmd) == 1:
-        text += f"\n**[Replied Message ID]({message.reply_to_message.link})**: `{message.reply_to_message.message_id}` \n**[Replied User ID](tg://user?id=message.reply_to_message.from_user.id})**: `{message.reply_to_message.from_user.id}`"
+        text += f"\n**[Replied Message ID]({message.reply_to_message.link})**: `{message.reply_to_message.message_id}` \n**[Replied User ID](tg://user?id={message.reply_to_message.from_user.id})**: `{message.reply_to_message.from_user.id}`"
     await message.edit(text, disable_web_page_preview=True)
