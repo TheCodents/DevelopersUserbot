@@ -12,7 +12,7 @@ HELP.update(
         "**Admin Tools**": "__ban, unban, promote, demote, kick, mute, unmute, pin, purge, del, invite__",
         "**Alive**": "__alive, ping__",
         "**Developer**": "__peval, teval, term__",
-        "**Misc**": "__paste, tr, info, id__",
+        "**Misc**": "__paste, tr, info, id, restart__",
         "**Updater**": "__update__",
     }
 )
