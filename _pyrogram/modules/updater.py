@@ -2,6 +2,7 @@
 # The Author (Jayant Kageri) just Ported this for Devloper Userbot
 # (C) 2021 Jayant Kageri
 
+import heroku3
 import asyncio
 import sys
 from os import environ, execle, path, remove
@@ -171,3 +172,13 @@ async def upstream(client, message):
         args = [sys.executable, "./resources/startup/deploy.sh"]
         execle(sys.executable, *args, environ)
         return
+
+@app.on_message(filters.command("restart", PREFIX) & filters.me)
+async def restart(client, message):
+    try:
+        await message.edit("Restarting your Userbot, It will take few minutes, Please Wait")
+        heroku_conn = heroku3.from_key(HEROKU_API)
+        server = heroku_conn.app(HEROKU_APP_NAME)
+        server.restart()
+    except Exception as e:
+        await message.edit(f"Your `HEROKU_APP_NAME` or `HEROKU_API` is Wrong or Not Filled, Please Make it correct or fill it \n\nError: ```{e}```")
