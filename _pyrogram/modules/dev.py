@@ -18,7 +18,7 @@ CMD_HELP.update(
 **Developer**
   `peval` -> For Running Pyrogram Evaluations
   `teval` -> For Running Telethon Evaluations
-  `term` -> For Running commands in shell.
+  `sh` -> For Running commands in shell.
 """
     }
 )
@@ -82,7 +82,7 @@ async def evaluate(client, message):
         await status_message.edit(final_output)
 
 
-@app.on_message(filters.command("term", PREFIX) & filters.me)
+@app.on_message(filters.command("sh", PREFIX) & filters.me)
 async def terminal(client, message):
     if len(message.text.split()) == 1:
         await message.edit("Usage: `.term echo owo`")
