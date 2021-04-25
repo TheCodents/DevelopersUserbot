@@ -106,6 +106,6 @@ async def id(client, message):
             text += f' <code>{reply.forward_from.id}</code>\n'
             text_unping += text
             text_ping += f'\n<b><a href="tg://user?id={reply.forward_from.id}">Forwarded User ID:</a></b> <code>{reply.forward_from.id}</code>\n'
-    reply = await message.reply_text(text_unping, disable_web_page_preview=True)
+    reply = await message.edit(text_unping, disable_web_page_preview=True)
     if text_unping != text_ping:
-        await reply.edit_text(text_ping, disable_web_page_preview=True)
+        await message.edit(text_ping, disable_web_page_preview=True)
