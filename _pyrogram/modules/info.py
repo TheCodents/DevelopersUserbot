@@ -75,7 +75,7 @@ async def id(client, message):
     if not message.reply_to_message and len(cmd) == 1:
         get_user = message.from_user.id
     elif len(cmd) == 1:
-        get_user = message.reply_to_message.from_id
+        get_user = message.reply_to_message.from_user.id
         re_msg_id = message.reply_to_message.message_id
         re_msg_link = message.reply_to_message.link
     elif len(cmd) > 1:
