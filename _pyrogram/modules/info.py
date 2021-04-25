@@ -87,5 +87,5 @@ async def id(client, message):
     except Exception as e:
         await message.edit(f"{e}")
         return
-    text = "**User ID**: `{}`\n**Chat ID**: `{}`".format(user.id, chat_id)
+    text = "**Chat ID**: `{}`\n**Message ID**: `{}`\n**User ID**:`{}`".format(chat_id, message.id, user.id)
     await message.edit(text)
