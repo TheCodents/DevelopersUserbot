@@ -75,9 +75,12 @@ async def id(client, message):
     if not message.reply_to_message and len(cmd) == 1:
         get_user = message.from_user.id
     elif len(cmd) == 1:
-        get_user = message.reply_to_message.from_user.id
+        get_user = message.reply_to_message.from_id
+        re_msg_id = message.reply_to_message.message_id
+        re_msg_link = message.reply_to_message.link
     elif len(cmd) > 1:
         get_user = cmd[1]
+        msg_id = message.message_id
         try:
             get_user = int(cmd[1])
         except ValueError:
@@ -92,4 +95,6 @@ async def id(client, message):
     else:
         chat_78 = f"**Chat ID**: `{message.chat.id}`"
     text = f"""{chat_78} \n**[Message ID]({message.link})**: `{message.message_id}`\n**[User ID](tg://user?id={user.id})**: `{user.id}`\n"""
+    if len(cmd) == 1:
+        text += f"\n**[Replied Message ID]**: `{re_msg_id}` \n**[Replied User ID]**: `{get_user}`"
     await message.edit(text, disable_web_page_preview=True)
