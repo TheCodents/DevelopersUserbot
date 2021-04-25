@@ -17,7 +17,7 @@ async def load_plugin(client: Client, message: Message):
     try:
         if message.reply_to_message is not None:
             down_loaded_plugin_name = await message.reply_to_message.download(
-                file_name="./modules/"
+                file_name="./_pyrogram/modules/"
             )
             if down_loaded_plugin_name is not None:
                 # LOGGER.info(down_loaded_plugin_name)
