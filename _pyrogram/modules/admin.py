@@ -56,7 +56,7 @@ async def ban_hammer(_, message: Message):
             )
             await message.edit(f"Banned {get_user.first_name} from the chat.")
         except Exception as e:
-            await message.edit(f"Unable to Ban the User \n\nError: {e}")
+            await message.edit(f"{e}")
     else:
         await message.edit("User need to be Admin to use this command")
 
@@ -78,7 +78,7 @@ async def unban(_, message: Message):
             await message.edit(f"Unbanned {get_user.first_name} from the chat.")
 
         except Exception as e:
-            await message.edit(f"Unable to UnBan the User \n\nError: {e}")
+            await message.edit(f"{e}")
     else:
         await message.edit("User need to be Admin to use this command")
 
@@ -118,7 +118,7 @@ async def mute_hammer(_, message: Message):
             )
             await message.edit(f"{get_user.first_name} has been muted.**")
         except Exception as e:
-            await message.edit(f"Unable to Mute the User \n\nError: {e}")
+            await message.edit(f"{e}")
     else:
         await message.edit("User need to be Admin to use this command")
 
@@ -159,7 +159,7 @@ async def unmute(_, message: Message):
             )
             await message.edit(f"**{get_user.first_name} was unmuted.**")
         except Exception as e:
-            await message.edit(f"Unable to UnMute the User \n\nError: {e}")
+            await message.edit(f"{e}")
     else:
         await message.edit("User need to be Admin to use this command")
 
@@ -183,7 +183,7 @@ async def kick_user(_, message: Message):
             )
             await message.edit(f"**Kicked {get_user.first_name} from the chat.**")
         except Exception as e:
-            await message.edit(f"Unable to Kick the User \n\nError: {e}")
+            await message.edit(f"{e}")
     else:
         await message.edit("User need to be Admin to use this command")
 
