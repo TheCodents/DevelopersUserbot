@@ -53,8 +53,8 @@ async def whois(client, message):
             pass
     try:
         user = await client.get_users(get_user)
-    except PeerIdInvalid:
-        await message.reply("I don't know that User.")
+    except Exception as e:
+        await message.reply(f"{e}")
         return
     await message.edit_text(
     infotext.format(
@@ -84,8 +84,8 @@ async def id(client, message):
             pass
     try:
         user = await client.get_users(get_user)
-    except PeerIdInvalid:
-        await message.edit("I don't know that User.")
+    except Exception as e:
+        await message.edit(f"{e}")
         return
     text = "**User ID**: `{}`\n**Chat ID**: `{}`".format(user.id, chat_id)
     await message.edit(text)
