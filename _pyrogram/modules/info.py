@@ -54,7 +54,7 @@ async def whois(client, message):
     try:
         user = await client.get_users(get_user)
     except Exception as e:
-        await message.reply(f"{e}")
+        await message.edit(f"{e}")
         return
     await message.edit_text(
     infotext.format(
