@@ -56,36 +56,16 @@ async def whois(client, message):
     except PeerIdInvalid:
         await message.reply("I don't know that User.")
         return
-    pfp = await app.get_profile_photos(user.id)
-    if not pfp:
-        await message.edit_text(
-            infotext.format(
-                full_name=FullName(user),
-                user_id=user.id,
-                first_name=user.first_name,
-                last_name=user.last_name or "",
-                username=user.username or "",
-            ),
+    await message.edit_text(
+    infotext.format(
+        full_name=FullName(user),
+        user_id=user.id,
+        first_name=user.first_name,
+        last_name=user.last_name or "",
+        username=user.username or "",
+    ),
             disable_web_page_preview=True,
         )
-    else:
-        dls = await app.download_media(pfp[0]["file_id"], file_name=f"{user.id}.png")
-        await message.delete()
-        await app.send_document(
-            message.chat.id,
-            dls,
-            caption=infotext.format(
-                full_name=FullName(user),
-                user_id=user.id,
-                first_name=user.first_name,
-                last_name=user.last_name or "",
-                username=user.username or "",
-            ),
-            reply_to_message_id=message.reply_to_message.message_id
-            if message.reply_to_message
-            else None,
-        )
-        os.remove(dls)
 
 
 @app.on_message(filters.command("id", PREFIX) & filters.me)
