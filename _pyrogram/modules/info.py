@@ -87,5 +87,9 @@ async def id(client, message):
     except Exception as e:
         await message.edit(f"{e}")
         return
-    text = "**Chat ID**: `{}`\n**Message ID**: `{}`\n**User ID**:`{}`".format(chat_id, message.id, user.id)
+    if message.chat.username:
+        chat_78 = f"[**Chat ID**](https://t.me/{message.chat.username}): `{message.chat.id} \n`
+    else:
+        chat_78 = f"**Chat ID**: `{message.chat.id} \n`
+    text = f"{chat_78}[**Message ID**](https://t.me/{message.chat.id}/{message.message_id}): `{message.id}`\n[**User ID**](tg://user?id={user.id}):`{user.id}`"
     await message.edit(text)
