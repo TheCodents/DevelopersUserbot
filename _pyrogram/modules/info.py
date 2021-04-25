@@ -91,5 +91,5 @@ async def id(client, message):
         chat_78 = f"[**Chat ID**](https://t.me/{message.chat.username}): `{message.chat.id}`"
     else:
         chat_78 = f"**Chat ID**: `{message.chat.id}`"
-    text = f"""{chat_78} \n[**Message ID**](https://t.me/{message.chat.id}/{message.message_id}): `{message.id}`\n[**User ID**](tg://user?id={user.id}):`{user.id}`\n"""
+    text = f"""{chat_78} \n[**Message ID**](https://t.me/{message.chat.id}/{message.message_id}): `{message.message_id}`\n[**User ID**](tg://user?id={user.id}):`{user.id}`\n"""
     await message.edit(text)
