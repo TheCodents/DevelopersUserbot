@@ -19,6 +19,8 @@ CMD_HELP.update(
   `info` [user handle] -> Provides information about the user.
   `id` [user handle] -> Give user or chat id
   `restart` -> Restart the Clients
+  `load -p` -> To Install/Load Pyrogram Plugins
+  `load -t` -> To Install/Load Telethon Plugins
 """
     }
 )
