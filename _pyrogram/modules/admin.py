@@ -54,7 +54,7 @@ async def ban_hammer(_, message: Message):
                 chat_id=message.chat.id,
                 user_id=get_user.id,
             )
-            await message.edit(f"Banned {get_user.first_name} from the chat.")
+            await message.edit(f"Banned [{get_user.first_name}](tg://user?id={get_user.id}) from the chat.")
         except Exception as e:
             await message.edit(f"{e}")
     else:
@@ -75,7 +75,7 @@ async def unban(_, message: Message):
         try:
             get_user = await app.get_users(user)
             await app.unban_chat_member(chat_id=message.chat.id, user_id=get_user.id)
-            await message.edit(f"Unbanned {get_user.first_name} from the chat.")
+            await message.edit(f"Unbanned [{get_user.first_name}](tg://user?id={get_user.id}) from the chat.")
 
         except Exception as e:
             await message.edit(f"{e}")
@@ -116,7 +116,7 @@ async def mute_hammer(_, message: Message):
                 user_id=get_user.id,
                 permissions=mute_permission,
             )
-            await message.edit(f"{get_user.first_name} has been muted.**")
+            await message.edit(f"[{get_user.first_name}](tg://user?id={get_user.id}) has been muted.**")
         except Exception as e:
             await message.edit(f"{e}")
     else:
@@ -157,7 +157,7 @@ async def unmute(_, message: Message):
                 user_id=get_user.id,
                 permissions=unmute_permissions,
             )
-            await message.edit(f"**{get_user.first_name} was unmuted.**")
+            await message.edit(f"[{get_user.first_name}](tg://user?id={get_user.id}) was unmuted.")
         except Exception as e:
             await message.edit(f"{e}")
     else:
@@ -181,7 +181,7 @@ async def kick_user(_, message: Message):
                 chat_id=message.chat.id,
                 user_id=get_user.id,
             )
-            await message.edit(f"**Kicked {get_user.first_name} from the chat.**")
+            await message.edit(f"**Kicked [{get_user.first_name}](tg://user?id={get_user.id}) from the chat.**")
         except Exception as e:
             await message.edit(f"{e}")
     else:
@@ -261,7 +261,7 @@ async def promote(client, message: Message):
     try:
         await app.promote_chat_member(message.chat.id, user, can_manage_chat=True, can_change_info=True, can_delete_messages=True, can_restrict_members=True, can_invite_users=True, can_pin_messages=True, can_manage_voice_chats=True)
         await message.edit(
-            f"Successfully Promoted {get_user.first_name} with title {title}"
+            f"Successfully Promoted [{get_user.first_name}](tg://user?id={get_user.id}) with title {title}"
         )
     except Exception as e:
         await message.edit(f"{e}")
@@ -301,7 +301,7 @@ async def demote(client, message: Message):
             can_post_messages=False,
         )
         await message.edit(
-            f"Successfully Demoted {get_user.first_name}"
+            f"Successfully Demoted [{get_user.first_name}](tg://user?id={get_user.id})"
         )
     except Exception as e:
         await message.edit(f"{e}")
@@ -320,6 +320,6 @@ async def invite(client, message):
     get_user = await app.get_users(user)
     try:
         await app.add_chat_members(message.chat.id, get_user.id)
-        await message.edit(f"Successfully added {get_user.first_name} to this chat")
+        await message.edit(f"Successfully added [{get_user.first_name}](tg://user?id={get_user.id}) to this chat")
     except Exception as e:
         await message.edit(f"{e}")
