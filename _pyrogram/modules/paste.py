@@ -1,4 +1,4 @@
-# This file is Originally wirtten by @SpeChiDe on GitHub
+# This file is Originally wirtten by @SpEcHiDe on GitHub
 # The Author (Jayant Kageri) just Ported this for Devloper Userbot
 # (C) 2021 Jayant Kageri
 
