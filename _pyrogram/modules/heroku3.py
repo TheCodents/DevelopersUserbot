@@ -191,7 +191,19 @@ async def log(client, message):
         heroku_conn = heroku3.from_key(HEROKU_API)
         server = heroku_conn.get_app_log(HEROKU_APP_NAME, dyno='pyrogram.1', lines=25, source='app', timeout=100)
         log = heroku_conn.get_app_log(HEROKU_APP_NAME, dyno='telethon.1', lines=25, source='app', timeout=100)
-        await message.reply(f"**LOGS**:\nLast 25 Lines of Pyrogram Client \n```{server}```")
-        await message.reply(f"**LOGS**:\nLast 25 Lines of Telethon Client \n```{log}```")
+        f_logs = server + "\n\n====================================\n\n" + log
+
+        if len(f_logs) > 4096:
+            file = open("logs.txt", "w+")
+            file.write(changelog_str)
+            file.close()
+            await app.send_document(
+                message.chat.id,
+                "logs.txt",
+                caption=f"Logs for {HEROKU_APP_NAME}",
+                
+            )
+                remove("logs.txt")
+
     except Exception as e:
         await message.edit(f"{e}")
