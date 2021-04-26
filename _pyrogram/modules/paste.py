@@ -1,4 +1,4 @@
-# This file is taken from @pyrogram on GitHub
+# This file is Originally wirtten by @SpeChiDe on GitHub
 # The Author (Jayant Kageri) just Ported this for Devloper Userbot
 # (C) 2021 Jayant Kageri
 
@@ -27,8 +27,8 @@ CMD_HELP.update(
 
 TMP_DOWNLOAD_DIRECTORY = "./_pyrogram/"
 
-@apl.on_message(filters.command("paste", PREFIX)
-async def paste_bin(_, message):
+@app.on_message(filters.command("paste", PREFIX & filters.me)
+async def pastebin(_, message):
     status_message = await message.reply_text("...")
     downloaded_file_name = None
 
