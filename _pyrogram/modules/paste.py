@@ -29,7 +29,7 @@ TMP_DOWNLOAD_DIRECTORY = "./_pyrogram/"
 
 @app.on_message(filters.command("paste", PREFIX) & filters.me)
 async def pastebin(_, message):
-    status_message = await message.reply_text("...")
+    await message.edit("...")
     downloaded_file_name = None
 
     if message.reply_to_message and message.reply_to_message.media:
@@ -48,11 +48,11 @@ async def pastebin(_, message):
     # elif len(message.command) > 1:
     #     downloaded_file_name = " ".join(message.command[1:])
     else:
-        await status_message.edit("Not said What to do")
+        await message.edit("Not said What to do")
         return
 
     if downloaded_file_name is None:
-        await status_message.edit("Didn't say what to do")
+        await message.edit("Didn't say what to do")
         return
 
     json_paste_data = {
@@ -93,9 +93,9 @@ async def pastebin(_, message):
         t_w_attempt, sort_keys=True, indent=4
     ) + "\n\n #ERROR"
     if t_w_attempt is not None:
-        required_url = paste_store_base_url + "/" + "raw" + "/" + t_w_attempt
+        required_url = "**Patsted to Nekobin**\n" + paste_store_base_url + "/" + "raw" + "/" + t_w_attempt
 
-    await status_message.edit(required_url)
+    await message.edit(required_url)
 
 
 def bleck_megick(dict_rspns):
