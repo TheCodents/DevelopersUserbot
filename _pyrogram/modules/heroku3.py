@@ -203,7 +203,7 @@ async def log(client, message):
                 caption=f"Logs for {HEROKU_APP_NAME}",
                 
             )
-                remove("logs.txt")
+            remove("logs.txt")
 
     except Exception as e:
         await message.edit(f"{e}")
