@@ -189,8 +189,8 @@ async def log(client, message):
     try:
         await message.edit("Getting Last 25 Lines of Logs")
         heroku_conn = heroku3.from_key(HEROKU_API)
-        server = heroku_conn.get_app_log(HEROKU_APP_NAME, dyno='pyrogram.1', lines=25, source='app', timeout=False)
-        log = heroku_conn.get_app_log(HEROKU_APP_NAME, dyno='telethon.1', lines=25, source='app', timeout=False)
+        server = heroku_conn.get_app_log(HEROKU_APP_NAME, dyno='pyrogram.1', lines=25, source='app', timeout=100)
+        log = heroku_conn.get_app_log(HEROKU_APP_NAME, dyno='telethon.1', lines=25, source='app', timeout=100)
         await message.reply(f"**LOGS**:\nLast 25 Lines of Pyrogram Client \n```{server}```")
         await message.reply(f"**LOGS**:\nLast 25 Lines of Telethon Client \n```{log}```")
     except Exception as e:
