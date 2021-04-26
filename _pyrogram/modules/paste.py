@@ -47,4 +47,4 @@ async def neko(_, message: Message):
             timeout=TIMEOUT
         ) as response:
             key = (await response.json())["result"]["key"]
-    await message.edit(ANSWER.format(f"{BASE}/{key}.py"))
+    await message.edit(ANSWER.format(f"{BASE}/{key}.py"), disable_web_page_preview=True)
