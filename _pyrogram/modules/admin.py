@@ -46,7 +46,7 @@ async def ban_hammer(_, message: Message):
         else:
             user = get_arg(message)
             if not user:
-                await message.edit("User is Missing `CanRestrictMembers` Rights to use this command")
+                await message.edit("You need to specify a user by replying, or providing a username or user id...!")
                 return
         try:
             get_user = await app.get_users(user)
@@ -173,7 +173,7 @@ async def kick_usr(_, message: Message):
         else:
             user = get_arg(message)
             if not user:
-                await message.edit("User is Missing `CanRestrictMembers` Rights to use this command")
+                await message.edit("You need to specify a user by replying, or providing a username or user id...!")
                 return
         try:
             get_user = await app.get_users(user)
