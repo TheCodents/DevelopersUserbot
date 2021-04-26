@@ -27,7 +27,7 @@ CMD_HELP.update(
 
 TMP_DOWNLOAD_DIRECTORY = "./_pyrogram/"
 
-@app.on_message(filters.command("paste", PREFIX & filters.me)
+@app.on_message(filters.command("paste", PREFIX) & filters.me)
 async def pastebin(_, message):
     status_message = await message.reply_text("...")
     downloaded_file_name = None
