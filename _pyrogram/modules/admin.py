@@ -166,19 +166,35 @@ async def unmute(_, message: Message):
 
 @app.on_message(filters.command("kick", PREFIX) & filters.me)
 async def kick_usr(_, message: Message):
-    chat_id = message.chat.id
-    await message.edit("...")
-    user_id, _ = message.extract_user_and_text
-    if not user_id:
-        await message.edit(
-            text="You need to specify a user by replying, or providing a username or user id...!")
-        return
-    try:
-        get_mem = await message.client.get_chat_member(chat_id, user_id)
-        await message.client.kick_chat_member(chat_id, user_id, int(time.time() + 60))
-        await message.edit(f"Successfully Kicked [{get_mem.user.first_name}](tg://user?id={get_mem.user.id})")
-    except Exception as e_f:
-        await message.edit(f"{e_f}")
+    if await CheckAdmin(message) is True:
+        reply = message.reply_to_message
+        if reply:
+            user = reply.from_user["id"]
+        else:
+            user = get_arg(message)
+            if not user:
+                await message.edit("User is Missing `CanRestrictMembers` Rights to use this command")
+                return
+        try:
+            get_user = await app.get_users(user)
+            await app.kick_chat_member(
+                chat_id=message.chat.id,
+                user_id=get_user.id,
+            )
+        except Exception as e:
+            await message.edit(f"{e}")
+
+        try:
+            get_user = await app.get_users(user)
+            await app.unban_chat_member(chat_id=message.chat.id, user_id=get_user.id)
+
+        except Exception as e:
+            await message.edit(f"{e}")
+
+    else:
+        await message.edit("User need to be Admin to use this command")
+
+
 
 @app.on_message(filters.command("pin", PREFIX) & filters.me)
 async def pin_message(_, message: Message):
