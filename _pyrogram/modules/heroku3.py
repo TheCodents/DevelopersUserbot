@@ -188,7 +188,7 @@ async def restart(client, message):
 async def log(client, message):
     try:
         await message.edit("Getting Last 25 Lines of Logs")
-        heroku_conn = herok3.from_key(HEROKU_API)
+        heroku_conn = heroku3.from_key(HEROKU_API)
         server = heroku_conn.get_app_log(HEROKU_APP_NAME, dyno='pyrogram.1', lines=25, source='app', timeout=False)
         log = heroku_conn.get_app_log(HEROKU_APP_NAME, dyno='telethon.1', lines=25, source='app', timeout=False)
         await message.reply(f"**LOGS**:\nLast 25 Lines of Pyrogram Client \n```{server}```")
