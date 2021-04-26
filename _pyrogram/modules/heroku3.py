@@ -19,9 +19,9 @@ CMD_HELP.update(
     {
         "Heroku": """
 **Heroku**
-  `update`-> Updates the userbot to latest build. """
+  `update`-> Updates the userbot to latest build.
   `restart` -> To Restart the Userbot
-  `logs` -> To Get Heroku Logs
+  `logs` -> To Get Heroku Logs"""
     }
 )
 
