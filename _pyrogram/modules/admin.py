@@ -1,4 +1,4 @@
-# This file is Originally Written By @okay-retard on GitHub
+# This file is Originally Written By @okay-retard and @jayantkageri on GitHub
 # The Author (Jayant Kageri) just Ported this for Devloper Userbot
 # (C) 2021 Jayant Kageri
 
