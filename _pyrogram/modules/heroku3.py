@@ -17,9 +17,11 @@ from _pyrogram.helpers.pyrohelper import get_arg
 
 CMD_HELP.update(
     {
-        "Updater": """
-**Updater**
-  `update`-> updates the userbot to latest build. """
+        "Heroku": """
+**Heroku**
+  `update`-> Updates the userbot to latest build. """
+  `restart` -> To Restart the Userbot
+  `logs` -> To Get Heroku Logs
     }
 )
 
