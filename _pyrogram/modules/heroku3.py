@@ -195,7 +195,7 @@ async def log(client, message):
 
         if len(f_logs) > 4096:
             file = open("logs.txt", "w+")
-            file.write(changelog_str)
+            file.write(f_logs)
             file.close()
             await app.send_document(
                 message.chat.id,
