@@ -5,7 +5,5 @@ from _pyrogram import app, LOGGER
 from _pyrogram.modules import *
 import os
 
-os.system("clear")
-
 print("Pyrogram User Client Started \nPowered By @TheCodents\n(C) 2021 Jayant Kageri")
 app.run()
