@@ -191,7 +191,7 @@ async def log(client, message):
         heroku_conn = heroku3.from_key(HEROKU_API)
         server = heroku_conn.get_app_log(HEROKU_APP_NAME, dyno='pyrogram.1', lines=100, source='app', timeout=100)
         log = heroku_conn.get_app_log(HEROKU_APP_NAME, dyno='telethon.1', lines=100, source='app', timeout=100)
-        f_logs = server + "\n\n====================================\n\n" + log
+        f_logs = server + "\n\n===================================================================================================================================================\n\n" + log
 
         if len(f_logs) > 4096:
             file = open("logs.txt", "w+")
