@@ -65,7 +65,7 @@ async def alive(_, m):
     end_time = time.time()
     reply_msg += f"\nUptime: {uptime}"
     await m.delete()
-    await app.send_message(m.chat.id, reply_msg)
+    await app.send_message(m.chat.id, reply_msg, disable_web_page_preview=True)
 
 
 @app.on_message(filters.command("ping -p", PREFIX) & filters.me)
