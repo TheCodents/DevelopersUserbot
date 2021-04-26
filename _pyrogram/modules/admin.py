@@ -183,11 +183,10 @@ async def kick_usr(_, message: Message):
             )
         except Exception as e:
             await message.edit(f"{e}")
-
         try:
             get_user = await app.get_users(user)
             await app.unban_chat_member(chat_id=message.chat.id, user_id=get_user.id)
-
+            await message.edit(f"Succefully Kicked [{get_user.first_name}](tg://user?id={get_user.id})")
         except Exception as e:
             await message.edit(f"{e}")
 
