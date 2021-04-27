@@ -52,7 +52,7 @@ async def t_eval(event):
     if len(final_output) > int("1024"):
         with io.BytesIO(str.encode(final_output)) as out_file:
             out_file.name = "eval.text"
-            await borg.send_file(
+            await event.client.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
@@ -60,7 +60,6 @@ async def t_eval(event):
                 caption=cmd,
                 reply_to=reply_to_id,
             )
-            await event.delete()
     else:
         await event.edit(final_output)
 
