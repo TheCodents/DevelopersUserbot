@@ -74,4 +74,4 @@ async def pingme(_, message: Message):
     start = datetime.now()
     end = datetime.now()
     m_s = (end - start).microseconds / 1000
-    await message.edit(f"**[[Pyrogram [DC-{app_info.dc_id}]]](https://docs.pyrogram.org)**:\n**Ping Speed**: `{m_s} ms`", disable_web_page_preview=True)
+    await message.edit(f"**[[Pyrogram [DC-{app_info.dc_id}]]](https://docs.pyrogram.org)** \n**Ping Speed**: `{m_s} ms`", disable_web_page_preview=True)
