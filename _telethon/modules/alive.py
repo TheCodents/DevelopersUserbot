@@ -62,7 +62,8 @@ async def _(event):
         pass
     else:
         return
+    app_info = await app.get_me()
     start = datetime.now()
     end = datetime.now()
     ms = (end - start).microseconds / 1000
-    await event.edit(f"Pong!\n`{ms} ms`")
+    await event.edit(f"**[[Telethon [DC-{app_info.dc_id}](https://docs.telethon.dev)]** \n**Ping Speed**: `{ms} ms`")
