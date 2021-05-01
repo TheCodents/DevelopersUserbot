@@ -70,8 +70,9 @@ async def alive(_, m):
 
 @app.on_message(filters.command("ping -p", PREFIX) & filters.me)
 async def pingme(_, message: Message):
+    app_info = await app.get_me()
     start = datetime.now()
     await message.edit("Pong!")
     end = datetime.now()
     m_s = (end - start).microseconds / 1000
-    await message.edit(f"Pong!\n`{m_s} ms`")
+    await message.edit(f"**[[Pyrogram [DC-{app_info.dc_id}]:]](https://docs.pyrogram.org)** **Ping Speed**: `{m_s} ms`")
