@@ -66,4 +66,4 @@ async def _(event):
     start = datetime.now()
     end = datetime.now()
     ms = (end - start).microseconds / 1000
-    await event.edit(f"**[[Telethon [DC-{app_info.dc_id}](https://docs.telethon.dev)]** \n**Ping Speed**: `{ms} ms`")
+    await event.edit(f"**[[Telethon]](https://docs.telethon.dev)]** \n**Ping Speed**: `{ms} ms`")
