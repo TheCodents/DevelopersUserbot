@@ -72,7 +72,6 @@ async def alive(_, m):
 async def pingme(_, message: Message):
     app_info = await app.get_me()
     start = datetime.now()
-    await message.edit("Pong!")
     end = datetime.now()
     m_s = (end - start).microseconds / 1000
-    await message.edit(f"**[[Pyrogram [DC-{app_info.dc_id}]:]](https://docs.pyrogram.org)** **Ping Speed**: `{m_s} ms`")
+    await message.edit(f"**[[Pyrogram [DC-{app_info.dc_id}]]](https://docs.pyrogram.org)**:\n**Ping Speed**: `{m_s} ms`", disable_web_page_preview=True)
