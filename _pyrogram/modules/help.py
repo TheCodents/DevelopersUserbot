@@ -9,11 +9,11 @@ from _pyrogram.helpers.pyrohelper import get_arg
 
 HELP.update(
     {
-        "**Admin Tools**": "__ban, unban, promote, demote, kick, mute, unmute, pin, purge, del, invite__",
-        "**Alive**": "__alive, ping__",
-        "**Developer**": "__peval, teval, term__",
-        "**Misc**": "__paste, tr, info, id__",
-        "**Heroku**": "__update, restart, logs__",
+        "**Admin Tools**": "ban, unban, promote, demote, kick, mute, unmute, pin, purge, del, invite",
+        "**Alive**": "alive, ping",
+        "**Developer**": "peval, teval, sh",
+        "**Misc**": "paste, tr, info, id",
+        "**Heroku**": "update, restart, logs",
     }
 )
 
@@ -30,7 +30,7 @@ async def help(client, message):
     else:
         module_help = CMD_HELP.get(args, False)
         if not module_help:
-            await message.edit("__Invalid module name specified.__")
+            await message.edit("Invalid module name specified")
             return
         else:
             await message.edit(module_help)
