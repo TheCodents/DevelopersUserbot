@@ -123,7 +123,7 @@ async def unmute(_, message: Message):
         user = get_arg(message)
     try:
         get_user = await app.get_users(user)
-        await app.restrict_chat_member(chat_id=message.chat.id, user_id=get_user.id, permissions=unmute_permission)
+        await app.restrict_chat_member(chat_id=message.chat.id, user_id=get_user.id, permissions=unmute_permissions)
         await message.edit(f"[{get_user.first_name}](tg://user?id={get_user.id}) has been muted.**")
     except Exception as e:
         await message.edit(f"{e}")
