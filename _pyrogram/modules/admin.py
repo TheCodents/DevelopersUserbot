@@ -39,48 +39,34 @@ CMD_HELP.update(
 
 @app.on_message(filters.command("ban", PREFIX) & filters.me)
 async def ban_hammer(_, message: Message):
-    if await CheckAdmin(message) is True:
-        reply = message.reply_to_message
-        if reply:
-            user = reply.from_user["id"]
-        else:
-            user = get_arg(message)
-            if not user:
-                await message.edit("You need to specify a user by replying, or providing a username or user id...!")
-                return
-        try:
-            get_user = await app.get_users(user)
-            await app.kick_chat_member(
-                chat_id=message.chat.id,
-                user_id=get_user.id,
-            )
-            await message.edit(f"Banned [{get_user.first_name}](tg://user?id={get_user.id}) from the chat.")
-        except Exception as e:
-            await message.edit(f"{e}")
+    reply = message.reply_to_message
+    if reply:
+        user = reply.from_user["id"]
     else:
-        await message.edit("User need to be Admin to use this command")
-
+        user = get_arg(message)
+    try:
+        get_user = await app.get_users(user)
+        await app.kick_chat_member(
+        chat_id=message.chat.id,
+        user_id=get_user.id,
+        )
+        await message.edit(f"Banned [{get_user.first_name}](tg://user?id={get_user.id}) from the chat.")
+    except Exception as e:
+        await message.edit(f"{e}")
 
 @app.on_message(filters.command("unban", PREFIX) & filters.me)
 async def unban(_, message: Message):
-    if await CheckAdmin(message) is True:
-        reply = message.reply_to_message
-        if reply:
-            user = reply.from_user["id"]
-        else:
-            user = get_arg(message)
-            if not user:
-                await message.edit("You need to specify a user by replying, or providing a username or user id...!")
-                return
-        try:
-            get_user = await app.get_users(user)
-            await app.unban_chat_member(chat_id=message.chat.id, user_id=get_user.id)
-            await message.edit(f"Unbanned [{get_user.first_name}](tg://user?id={get_user.id}) from the chat.")
-
-        except Exception as e:
-            await message.edit(f"{e}")
+    reply = message.reply_to_message
+    if reply:
+        user = reply.from_user["id"]
     else:
-        await message.edit("User need to be Admin to use this command")
+        user = get_arg(message)
+    try:
+        get_user = await app.get_users(user)
+        await app.unban_chat_member(chat_id=message.chat.id, user_id=get_user.id)
+        await message.edit(f"Unbanned [{get_user.first_name}](tg://user?id={get_user.id}) from the chat.")
+    except Exception as e:
+        await message.edit(f"{e}")
 
 # Mute Permissions
 mute_permission = ChatPermissions(
@@ -100,28 +86,17 @@ mute_permission = ChatPermissions(
 
 @app.on_message(filters.command("mute", PREFIX) & filters.me)
 async def mute_hammer(_, message: Message):
-    if await CheckAdmin(message) is True:
-        reply = message.reply_to_message
-        if reply:
-            user = reply.from_user["id"]
-        else:
-            user = get_arg(message)
-            if not user:
-                await message.edit("You need to specify a user by replying, or providing a username or user id...!")
-                return
-        try:
-            get_user = await app.get_users(user)
-            await app.restrict_chat_member(
-                chat_id=message.chat.id,
-                user_id=get_user.id,
-                permissions=mute_permission,
-            )
-            await message.edit(f"[{get_user.first_name}](tg://user?id={get_user.id}) has been muted.**")
-        except Exception as e:
-            await message.edit(f"{e}")
+    reply = message.reply_to_message
+    if reply:
+        user = reply.from_user["id"]
     else:
-        await message.edit("User need to be Admin to use this command")
-
+        user = get_arg(message)
+    try:
+        get_user = await app.get_users(user)
+        await app.restrict_chat_member(chat_id=message.chat.id, user_id=get_user.id, permissions=mute_permission)
+        await message.edit(f"[{get_user.first_name}](tg://user?id={get_user.id}) has been muted.**")
+    except Exception as e:
+        await message.edit(f"{e}")
 
 # Unmute permissions
 unmute_permissions = ChatPermissions(
@@ -141,59 +116,32 @@ unmute_permissions = ChatPermissions(
 
 @app.on_message(filters.command("unmute", PREFIX) & filters.me)
 async def unmute(_, message: Message):
-    if await CheckAdmin(message) is True:
-        reply = message.reply_to_message
-        if reply:
-            user = reply.from_user["id"]
-        else:
-            user = get_arg(message)
-            if not user:
-                await message.edit("You need to specify a user by replying, or providing a username or user id...!")
-                return
-        try:
-            get_user = await app.get_users(user)
-            await app.restrict_chat_member(
-                chat_id=message.chat.id,
-                user_id=get_user.id,
-                permissions=unmute_permissions,
-            )
-            await message.edit(f"[{get_user.first_name}](tg://user?id={get_user.id}) was unmuted.")
-        except Exception as e:
-            await message.edit(f"{e}")
+    reply = message.reply_to_message
+    if reply:
+        user = reply.from_user["id"]
     else:
-        await message.edit("User need to be Admin to use this command")
-
+        user = get_arg(message)
+    try:
+        get_user = await app.get_users(user)
+        await app.restrict_chat_member(chat_id=message.chat.id, user_id=get_user.id, permissions=unmute_permission)
+        await message.edit(f"[{get_user.first_name}](tg://user?id={get_user.id}) has been muted.**")
+    except Exception as e:
+        await message.edit(f"{e}")
 
 @app.on_message(filters.command("kick", PREFIX) & filters.me)
 async def kick_usr(_, message: Message):
-    if await CheckAdmin(message) is True:
-        reply = message.reply_to_message
-        if reply:
-            user = reply.from_user["id"]
-        else:
-            user = get_arg(message)
-            if not user:
-                await message.edit("You need to specify a user by replying, or providing a username or user id...!")
-                return
-        try:
-            get_user = await app.get_users(user)
-            await app.kick_chat_member(
-                chat_id=message.chat.id,
-                user_id=get_user.id,
-            )
-        except Exception as e:
-            await message.edit(f"{e}")
-        try:
-            get_user = await app.get_users(user)
-            await app.unban_chat_member(chat_id=message.chat.id, user_id=get_user.id)
-            await message.edit(f"Succefully Kicked [{get_user.first_name}](tg://user?id={get_user.id})")
-        except Exception as e:
-            await message.edit(f"{e}")
-
+    reply = message.reply_to_message
+    if reply:
+        user = reply.from_user["id"]
     else:
-        await message.edit("User need to be Admin to use this command")
-
-
+        user = get_arg(message)
+    try:
+        get_user = await app.get_users(user)
+        await app.kick_chat_member(chat_id=message.chat.id, user_id=get_user.id)
+        await app.unban_chat_member(chat_id=message.chat.id, user_id=get_user.id)
+        await message.edit(f"Succefully Kicked [{get_user.first_name}](tg://user?id={get_user.id})")
+    except Exception as e:
+        await message.edit(f"{e}")
 
 @app.on_message(filters.command("pin", PREFIX) & filters.me)
 async def pin_message(_, message: Message):
@@ -248,52 +196,41 @@ async def pin_message(_, message: Message):
 
 @app.on_message(filters.command("promote", PREFIX) & filters.me)
 async def promote(client, message: Message):
-    if await CheckAdmin(message) is False:
-        await message.edit("User need to be Admin to use this command")
-        return
-    title = "Admin"
-    reply = message.reply_to_message
-    if reply:
-        user = reply.from_user["id"]
-        title = str(get_arg(message))
-    else:
-        args = get_args(message)
-        if not args:
-            await message.edit("User is Missing `CanPromoteMembers` Rights to use this Command")
-            return
+    try:
+        title = "Admin"
+        reply = message.reply_to_message
+        if reply:
+            user = reply.from_user["id"]
+            title = str(get_arg(message))
+        else:
+            args = get_args(message)
         user = args[0]
         if len(args) > 1:
             title = " ".join(args[1:])
-    get_user = await app.get_users(user)
-    try:
+        get_user = await app.get_users(user)
         await app.promote_chat_member(message.chat.id, user, can_manage_chat=True, can_change_info=True, can_delete_messages=True, can_restrict_members=True, can_invite_users=True, can_pin_messages=True, can_manage_voice_chats=True)
         await message.edit(
             f"Successfully Promoted [{get_user.first_name}](tg://user?id={get_user.id}) with title {title}"
         )
+
     except Exception as e:
         await message.edit(f"{e}")
+
     if title:
         try:
             await app.set_administrator_title(message.chat.id, user, title)
         except:
             pass
 
-
 @app.on_message(filters.command("demote", PREFIX) & filters.me)
 async def demote(client, message: Message):
-    if await CheckAdmin(message) is False:
-        await message.edit("User need to be Admin to use this Command")
-        return
-    reply = message.reply_to_message
-    if reply:
-        user = reply.from_user["id"]
-    else:
-        user = get_arg(message)
-        if not user:
-            await message.edit("User is Missing `CanPromoteMembers` Rights to use this Command")
-            return
-    get_user = await app.get_users(user)
     try:
+        reply = message.reply_to_message
+        if reply:
+            user = reply.from_user["id"]
+        else:
+            user = get_arg(message)
+        get_user = await app.get_users(user)
         await app.promote_chat_member(
             message.chat.id,
             user,
@@ -312,7 +249,6 @@ async def demote(client, message: Message):
         )
     except Exception as e:
         await message.edit(f"{e}")
-
 
 @app.on_message(filters.command("invite", PREFIX) & filters.me & ~filters.private)
 async def invite(client, message):
