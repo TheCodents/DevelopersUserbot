@@ -27,11 +27,12 @@
 
 # LEGAL
 ## Credits
+- Thanks to [Satwik](https://github.com/okay-retard) for his [Zect Userbot](https://github.com/okay-retard/ZectUserbot)
 - Thanks to [Dan Tès](https://github.com/delivrance) for his [Pyrogram](https://docs.pyrogram.org)
 - Thanks to [Lonami](https://github.com/lonami/) for his [Telethon](https://docs.telethon.dev)
-- Thanks to [Satwik](https://github.com/okay-retard) for his [Zect Userbot](https://github.com/okay-retard/ZectUserbot)
 - Thanks to [Shrimadhv UK](https://github.com/SpEcHiDe)
 - Thanks to [Aditya S](https://github.com/xditya)
+- Thanks to [Swonit](https://github.com/swatv3nub)
 - Thanks to [Me](https://github.com/jayantkageri)
 
 ## License
