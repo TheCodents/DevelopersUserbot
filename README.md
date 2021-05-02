@@ -4,7 +4,7 @@
 # HELP CENTER
 ## Deploy
 
-### Deploy to Heroku
+### Deploy to Heroku [Recommended]
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/TheCodents/DevelopersUserbot)
 
 ### Local Deploy
@@ -32,7 +32,7 @@
 - Thanks to [Satwik](https://github.com/okay-retard) for his [Zect Userbot](https://github.com/okay-retard/ZectUserbot)
 - Thanks to [Shrimadhv UK](https://github.com/SpEcHiDe)
 - Thanks to [Aditya S](https://github.com/xditya)
-- Thanks to [ME](https://github.com/jayantkageri)
+- Thanks to [Me](https://github.com/jayantkageri)
 
 ## License
 ```
