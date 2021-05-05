@@ -21,6 +21,7 @@ CMD_HELP.update(
   `id` [user handle] -> Give user or chat id
   `restart` -> Restart the Clients
   `load -p` -> To Install/Load Pyrogram Plugins
+  `json` -> To Get Message Details
 """
     }
 )
