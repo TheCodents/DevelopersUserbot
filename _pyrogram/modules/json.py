@@ -1,6 +1,7 @@
 from pyrogram.types import *
 from _pyrogram import *
 from pyrogram import *
+from config import *
 
 @app.on_message(filters.command("json", PREFIX) & filters.me)
 async def start(client, message):
