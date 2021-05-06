@@ -14,7 +14,8 @@ async def start(client, message):
             msg = message
 
         msg_info = str(msg)
-        if len(msg_info) > 4096:
+
+        if len(msg_info) > int(4096):
             file = open("json.txt", "w+")
             file.write(msg_info)
             file.close()
