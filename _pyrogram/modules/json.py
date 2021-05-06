@@ -8,11 +8,12 @@ from os import *
 async def start(client, message):
     try:
         if message.reply_to_message:
-            msg_info = message.reply_to_message
+            msg = message.reply_to_message
 
         else:
-            msg_info = message
+            msg = message
 
+        msg_info = str(msg)
         if len(msg_info) > 4096:
             file = open("json.txt", "w+")
             file.write(msg_info)
