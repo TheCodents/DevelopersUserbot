@@ -2,12 +2,10 @@ import multiprocessing
 
 from _telethon import app as tapp
 from _pyrogram import app as papp
-
-def trun(tclient):
-    tclient.run_until_disconnected()
     
-def prun(pclient):
+def prun(pclient, **args):# kinda weird
     pclient.run()
     
-multiprocessing.Process(target=trun, args=(tapp)).start()
-prun(papp)
+if __name__ == "__main__":
+    multiprocessing.Process(target=prun, args=(papp, True)).start()
+    tapp.run_until_disconnected()
