@@ -57,7 +57,7 @@ async def t_eval(event):
                 out_file,
                 force_document=True,
                 allow_cache=False,
-                caption=cmd,
+                caption="eval",
                 reply_to=reply_to_id,
             )
     else:
