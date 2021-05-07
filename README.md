@@ -32,6 +32,7 @@
 - Thanks to [Shrimadhv UK](https://github.com/SpEcHiDe)
 - Thanks to [Aditya S](https://github.com/xditya)
 - Thanks to [Swonit](https://github.com/swatv3nub)
+- Thanks to [Sipak](https://github.com/ProgrammingError)
 - Thanks to [Me](https://github.com/jayantkageri)
 
 ## License
