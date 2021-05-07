@@ -10,4 +10,4 @@ def prun(pclient, useless):# kinda weird
 if __name__ == "__main__":
     multiprocessing.Process(target=prun, args=(papp, True)).start()
     # await tapp.connect()
-    tapp.run_until_disconnected()
+    multiprocessing.Process(target=tapp.run_until_disconnected).start()
