@@ -1,1 +1,2 @@
-app: python3 main.py
+pyrogram: python3 -m _pyrogram
+telethon: python3 -m _telethon
