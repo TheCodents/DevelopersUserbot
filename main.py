@@ -1,3 +1,4 @@
+
 import multiprocessing
 
 from _telethon import app as ttapp
@@ -10,4 +11,4 @@ def prun(pclient):
     pclient.run()
     
 multiprocessing.Process(target=trun, args=(ttapp)).start()
-prun()
+prun(pgapp)
