@@ -85,7 +85,7 @@ async def evaluate(client, message):
 @app.on_message(filters.command("sh", PREFIX) & filters.me)
 async def terminal(client, message):
     if len(message.text.split()) == 1:
-        await message.edit("Usage: `.term echo owo`")
+        await message.edit(f"Usage: `{PREFIX}sh echo owo`")
         return
     args = message.text.split(None, 1)
     teks = args[1]
