@@ -10,8 +10,9 @@
 ### Local Deploy
 - Fill the config.py with your Own Values
 - Install Requirements by `pip3 install -r requirements.txt`
-- Open Terminal
-- In Terminal do `python3 main.py`
+- Open 2 Terminal
+- In 1st Terminal do `python3 -m _pyrogram`
+- In 2nd Terminal do `python3 -m _telethon`
 - Done :)
 
 ## Configuration
