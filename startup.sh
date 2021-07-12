@@ -8,6 +8,6 @@ elif [[ -z "$PYROGRAM_SESSION" ]]
 then
 	python -m _telethon
 else
-	python -m _pyrogram && python -m _telethon
+	python -m _pyrogram & python -m _telethon
 	exit 1
 fi
