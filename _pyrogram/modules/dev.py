@@ -72,7 +72,7 @@ async def evaluate(client, message):
             out_file.write(str(final_output))
         await message.reply_document(
             document=filename,
-            caption=cmd,
+            caption="Pyrogram Eval",
             disable_notification=True,
             reply_to_message_id=reply_to_id,
         )

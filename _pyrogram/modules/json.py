@@ -9,15 +9,12 @@ async def start(client, message):
     try:
         if message.reply_to_message:
             msg = message.reply_to_message
-
         else:
             msg = message
 
-        msg_info = str(msg)
-
-        if len(msg_info) > int("4096"):
+        if len(str(msg_info)) > int("4096"):
             file = open("json.txt", "w+")
-            file.write(msg_info)
+            file.write(str(msg_info))
             file.close()
             await app.send_document(
                 message.chat.id,
@@ -28,7 +25,7 @@ async def start(client, message):
             remove("json.txt")
 
         else:
-            await message.edit(msg_info)
+            await message.edit(str(msg_info))
 
     except Exception as e:
         await message.edit(f"{e}")

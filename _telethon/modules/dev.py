@@ -57,7 +57,7 @@ async def t_eval(event):
                 out_file,
                 force_document=True,
                 allow_cache=False,
-                caption="eval",
+                caption="Telethon Eval",
                 reply_to=reply_to_id,
             )
     else:
